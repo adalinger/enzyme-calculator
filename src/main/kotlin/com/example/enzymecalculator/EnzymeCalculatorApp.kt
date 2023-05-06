@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class EnzymeCalculatorApp
 
 fun main(args: Array<String>) {
-	runApplication<EnzymeCalculatorApp>(*args)
+    runApplication<EnzymeCalculatorApp>(*args)
 }
