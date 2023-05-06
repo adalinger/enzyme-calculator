@@ -46,6 +46,7 @@ function EnzymeCalculator() {
                             <FormControl
                                 id="enzymeUnitsPerGramFat"
                                 type="number"
+                                inputMode="numeric"
                                 value={enzymeUnitsPerGramFat}
                                 onChange={event => setEnzymeUnitsPerGramFat(event.target.value)}
                             />
@@ -59,6 +60,7 @@ function EnzymeCalculator() {
                                     <FormControl
                                         id="fatPer100GramsFood"
                                         type="number"
+                                        inputMode="numeric"
                                         value={value.fatPer100GramsFood}
                                         onChange={event => handleChangeFood(event, index)}
                                     />
@@ -70,6 +72,7 @@ function EnzymeCalculator() {
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
+                                        inputMode="numeric"
                                         value={value.eatenGramsFood}
                                         onChange={event => handleChangeFood(event, index)}
                                     />
