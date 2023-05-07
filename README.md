@@ -1,14 +1,19 @@
-# Getting Started
+# Enzyme Calculator
 
-### Reference Documentation
-For further reference, please consider the following sections:
+This application calculates how much enzyme units should be ingested given the amount of fat eaten.
+The implementation is based on Kotlin and Spring Boot for the backend and React for the frontend.
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.0.6/gradle-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.0.6/gradle-plugin/reference/html/#build-image)
+### Running the application locally
+Start the backend with
 
-### Additional Links
-These additional references should also help you:
+```shell
+./gradlew bootRun
+```
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+and start the frontend with
+```shell
+cd frontend
+npm start
+```
 
+Then open [http://localhost:3000](http://localhost:3000) in the browser.
