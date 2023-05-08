@@ -56,7 +56,7 @@ function EnzymeCalculator() {
                         <>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="fatPer100GramsFood">Fett pro 100g Essen</FormLabel>
+                                    <FormLabel htmlFor="fatPer100GramsFood">Fett pro 100g Lebensmittel</FormLabel>
                                     <FormControl
                                         id="fatPer100GramsFood"
                                         type="number"
@@ -68,7 +68,7 @@ function EnzymeCalculator() {
                             </Col>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="eatenGramsFood">Essen in g</FormLabel>
+                                    <FormLabel htmlFor="eatenGramsFood">Verzehrte Menge in g</FormLabel>
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
