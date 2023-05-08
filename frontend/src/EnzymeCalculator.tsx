@@ -13,7 +13,7 @@ interface Request {
 function EnzymeCalculator() {
     const [enzymeUnitsPerGramFat, setEnzymeUnitsPerGramFat] = React.useState('');
     const [foods, setFoods] = React.useState([{fatPer100GramsFood: '', eatenGramsFood: ''}]);
-    const [result, setResult] = React.useState('');
+    const [result, setResult] = React.useState({totalFatGrams: '', neededEnzymeUnits: ''});
 
     const handleAddFood = () => {
         let emptyFood = {fatPer100GramsFood: '', eatenGramsFood: ''}
@@ -33,7 +33,10 @@ function EnzymeCalculator() {
             foods: foods
         }
         axios.post(`/enzymes`, request)
-            .then(response => setResult(response.data))
+            .then(response => setResult({
+                totalFatGrams: response.data.totalFatGrams,
+                neededEnzymeUnits: response.data.neededEnzymeUnits
+            }))
     };
 
     return (
@@ -86,10 +89,11 @@ function EnzymeCalculator() {
                     <Col md={12} className="mt-3">
                         <Button type="submit">Berechnen</Button>
                     </Col>
-                    {result !== '' &&
+                    {result.totalFatGrams !== '' && result.neededEnzymeUnits !== '' &&
                         <Col md={12} className="mt-3">
                             <div>
-                                Benötigte Enzymeinheiten: {result}
+                                Gesamtmenge Fett: {result.totalFatGrams}g <br/>
+                                Dafür benötigte Enzymeinheiten: {result.neededEnzymeUnits}
                             </div>
                         </Col>
                     }
