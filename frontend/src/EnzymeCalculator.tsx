@@ -45,7 +45,7 @@ function EnzymeCalculator() {
                 <Row>
                     <Col sm={12} className="mt-3">
                         <Form.Group>
-                            <FormLabel htmlFor="enzymeUnitsPerGramFat">Enzymeinheiten pro g Fett</FormLabel>
+                            <FormLabel htmlFor="enzymeUnitsPerGramFat">Enzymeinheiten pro 1g Fett</FormLabel>
                             <FormControl
                                 id="enzymeUnitsPerGramFat"
                                 type="number"
@@ -71,7 +71,7 @@ function EnzymeCalculator() {
                             </Col>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="eatenGramsFood">Verzehrte Menge in g</FormLabel>
+                                    <FormLabel htmlFor="eatenGramsFood">Verzehrte Menge in Gramm</FormLabel>
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
