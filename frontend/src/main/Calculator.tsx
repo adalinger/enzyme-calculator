@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import {Button, Col, Container, Form, FormControl, FormLabel, Row} from "react-bootstrap";
-import {TooltipComponent} from "./TooltipComponent";
+import {TooltipComponent} from "./common/TooltipComponent";
 
 interface Request {
     enzymeUnitsPerGramFat: string,
@@ -14,7 +14,7 @@ interface Request {
 const tooltipFatContent = "Der Fettgehalt ist auf der Verpackung des Lebensmittels abgedruckt";
 const tooltipEatenFood = "Die verzehrte Menge soll am besten abgewogen und nur im Notfall geschätzt werden";
 
-function EnzymeCalculator() {
+function Calculator() {
     const [enzymeUnitsPerGramFat, setEnzymeUnitsPerGramFat] = React.useState('');
     const [foods, setFoods] = React.useState([{fatPer100GramsFood: '', eatenGramsFood: ''}]);
     const [result, setResult] = React.useState({totalFatGrams: '', neededEnzymeUnits: ''});
@@ -113,4 +113,4 @@ function EnzymeCalculator() {
     );
 }
 
-export {EnzymeCalculator};
+export {Calculator};
