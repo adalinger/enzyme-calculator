@@ -1,6 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import {Button, Col, Container, Form, FormControl, FormLabel, Row} from "react-bootstrap";
+import {TooltipComponent} from "./TooltipComponent";
 
 interface Request {
     enzymeUnitsPerGramFat: string,
@@ -9,6 +10,9 @@ interface Request {
         eatenGramsFood: string
     }[]
 }
+
+const tooltipFatContent = "Der Fettgehalt ist auf der Verpackung des Lebensmittels abgedruckt";
+const tooltipEatenFood = "Die verzehrte Menge soll am besten abgewogen und nur im Notfall geschätzt werden";
 
 function EnzymeCalculator() {
     const [enzymeUnitsPerGramFat, setEnzymeUnitsPerGramFat] = React.useState('');
@@ -59,7 +63,10 @@ function EnzymeCalculator() {
                         <>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="fatPer100GramsFood">Fett pro 100g Lebensmittel</FormLabel>
+                                    <FormLabel htmlFor="fatPer100GramsFood">
+                                        Fett pro 100g Lebensmittel
+                                        <TooltipComponent>{tooltipFatContent}</TooltipComponent>
+                                    </FormLabel>
                                     <FormControl
                                         id="fatPer100GramsFood"
                                         type="number"
@@ -71,7 +78,10 @@ function EnzymeCalculator() {
                             </Col>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="eatenGramsFood">Verzehrte Menge in Gramm</FormLabel>
+                                    <FormLabel htmlFor="eatenGramsFood">
+                                        Verzehrte Menge in Gramm
+                                        <TooltipComponent>{tooltipEatenFood}</TooltipComponent>
+                                    </FormLabel>
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
