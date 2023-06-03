@@ -1,4 +1,4 @@
-package com.example.enzymecalculator.rest
+package com.example.enzymecalculator.http
 
 data class CalculatorRequest(
         val enzymeUnitsPerGramFat: Double,

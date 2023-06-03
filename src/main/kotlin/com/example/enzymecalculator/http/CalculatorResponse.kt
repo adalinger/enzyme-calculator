@@ -1,4 +1,4 @@
-package com.example.enzymecalculator.rest
+package com.example.enzymecalculator.http
 
 data class CalculatorResponse(
         val totalFatGrams: Double,

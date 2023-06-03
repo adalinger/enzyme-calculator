@@ -1,4 +1,4 @@
-package com.example.enzymecalculator.rest
+package com.example.enzymecalculator.http
 
 import org.springframework.web.bind.annotation.*
 
