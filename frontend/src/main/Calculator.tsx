@@ -14,8 +14,12 @@ interface Request {
 const tooltipFatContent = "Der Fettgehalt ist auf der Verpackung des Lebensmittels abgedruckt";
 const tooltipEatenFood = "Die verzehrte Menge soll am besten abgewogen und nur im Notfall geschätzt werden";
 
+const keyEnzymeUnitsPerGramFat = "enzymeUnitsPerGramFat";
+
 function Calculator() {
-    const [enzymeUnitsPerGramFat, setEnzymeUnitsPerGramFat] = React.useState('');
+    const previousEnzymeUnitsPerGramFat = localStorage.getItem(keyEnzymeUnitsPerGramFat) || ""
+
+    const [enzymeUnitsPerGramFat, setEnzymeUnitsPerGramFat] = React.useState(previousEnzymeUnitsPerGramFat);
     const [foods, setFoods] = React.useState([{fatPer100GramsFood: '', eatenGramsFood: ''}]);
     const [result, setResult] = React.useState({totalFatGrams: '', neededEnzymeUnits: ''});
 
@@ -49,13 +53,17 @@ function Calculator() {
                 <Row>
                     <Col sm={12} className="mt-3">
                         <Form.Group>
-                            <FormLabel htmlFor="enzymeUnitsPerGramFat">Enzymeinheiten pro 1g Fett</FormLabel>
+                            <FormLabel htmlFor={keyEnzymeUnitsPerGramFat}>Enzymeinheiten pro 1g Fett</FormLabel>
                             <FormControl
-                                id="enzymeUnitsPerGramFat"
+                                id={keyEnzymeUnitsPerGramFat}
                                 type="number"
                                 inputMode="numeric"
                                 value={enzymeUnitsPerGramFat}
-                                onChange={event => setEnzymeUnitsPerGramFat(event.target.value)}
+                                onChange={event => {
+                                    let value = event.target.value;
+                                    setEnzymeUnitsPerGramFat(value)
+                                    localStorage.setItem(keyEnzymeUnitsPerGramFat, value)
+                                }}
                             />
                         </Form.Group>
                     </Col>
