@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/enzyme-calculator/static/css/main.44f8b8b5.css",
+    "main.js": "/enzyme-calculator/static/js/main.85979403.js",
+    "static/js/787.9be462e3.chunk.js": "/enzyme-calculator/static/js/787.9be462e3.chunk.js",
+    "index.html": "/enzyme-calculator/index.html",
+    "main.44f8b8b5.css.map": "/enzyme-calculator/static/css/main.44f8b8b5.css.map",
+    "main.85979403.js.map": "/enzyme-calculator/static/js/main.85979403.js.map",
+    "787.9be462e3.chunk.js.map": "/enzyme-calculator/static/js/787.9be462e3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44f8b8b5.css",
+    "static/js/main.85979403.js"
+  ]
+}
