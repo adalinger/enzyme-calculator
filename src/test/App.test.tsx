@@ -4,6 +4,6 @@ import App from '../main/App';
 
 test('renders learn react link', () => {
     render(<App/>);
-    const linkElement = screen.getByText(/learn react/i);
+    const linkElement = screen.getByText(/Enzymeinheiten pro 1g Fett/i);
     expect(linkElement).toBeInTheDocument();
 });
