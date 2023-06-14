@@ -60,7 +60,7 @@ function Calculator() {
                         </Form.Group>
                     </Col>
                     {foods.map((value, index) => (
-                        <React.Fragment>
+                        <React.Fragment key={index}>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
                                     <FormLabel htmlFor="fatPer100GramsFood">
