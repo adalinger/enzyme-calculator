@@ -1,15 +1,6 @@
 import React from "react";
-import axios from 'axios';
 import {Button, Col, Container, Form, FormControl, FormLabel, Row} from "react-bootstrap";
-import {TooltipComponent} from "./common/TooltipComponent";
-
-interface Request {
-    enzymeUnitsPerGramFat: string,
-    foods: {
-        fatPer100GramsFood: string,
-        eatenGramsFood: string
-    }[]
-}
+import {TooltipComponent} from "./TooltipComponent";
 
 const tooltipFatContent = "Der Fettgehalt ist auf der Verpackung des Lebensmittels abgedruckt";
 const tooltipEatenFood = "Die verzehrte Menge soll am besten abgewogen und nur im Notfall geschätzt werden";
@@ -17,15 +8,14 @@ const tooltipEatenFood = "Die verzehrte Menge soll am besten abgewogen und nur i
 const keyEnzymeUnitsPerGramFat = "enzymeUnitsPerGramFat";
 
 function Calculator() {
-    const previousEnzymeUnitsPerGramFat = localStorage.getItem(keyEnzymeUnitsPerGramFat) || ""
+    const previousEnzymeUnitsPerGramFat = localStorage.getItem(keyEnzymeUnitsPerGramFat) || ''
 
     const [enzymeUnitsPerGramFat, setEnzymeUnitsPerGramFat] = React.useState(previousEnzymeUnitsPerGramFat);
     const [foods, setFoods] = React.useState([{fatPer100GramsFood: '', eatenGramsFood: ''}]);
     const [result, setResult] = React.useState({totalFatGrams: '', neededEnzymeUnits: ''});
 
     const handleAddFood = () => {
-        let emptyFood = {fatPer100GramsFood: '', eatenGramsFood: ''}
-        setFoods([...foods, emptyFood])
+        setFoods([...foods, {fatPer100GramsFood: '', eatenGramsFood: ''}])
     }
 
     const handleChangeFood = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
@@ -34,17 +24,23 @@ function Calculator() {
         setFoods(newFoods)
     }
 
+    const calculateResult = () => {
+        let totalFatGrams = 0
+        for (const food of foods) {
+            totalFatGrams += parseFloat(food.fatPer100GramsFood) / 100 * parseFloat(food.eatenGramsFood)
+        }
+        const neededEnzymeUnits = parseFloat(enzymeUnitsPerGramFat) * totalFatGrams
+
+        setResult({
+            totalFatGrams: String(totalFatGrams),
+            neededEnzymeUnits: String(neededEnzymeUnits)
+        })
+    }
+
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const request: Request = {
-            enzymeUnitsPerGramFat: enzymeUnitsPerGramFat,
-            foods: foods
-        }
-        axios.post(`/enzymes`, request)
-            .then(response => setResult({
-                totalFatGrams: response.data.totalFatGrams,
-                neededEnzymeUnits: response.data.neededEnzymeUnits
-            }))
+        localStorage.setItem(keyEnzymeUnitsPerGramFat, enzymeUnitsPerGramFat)
+        calculateResult();
     };
 
     return (
@@ -57,13 +53,9 @@ function Calculator() {
                             <FormControl
                                 id={keyEnzymeUnitsPerGramFat}
                                 type="number"
-                                inputMode="numeric"
+                                inputMode="decimal"
                                 value={enzymeUnitsPerGramFat}
-                                onChange={event => {
-                                    let value = event.target.value;
-                                    setEnzymeUnitsPerGramFat(value)
-                                    localStorage.setItem(keyEnzymeUnitsPerGramFat, value)
-                                }}
+                                onChange={event => setEnzymeUnitsPerGramFat(event.target.value)}
                             />
                         </Form.Group>
                     </Col>
@@ -78,7 +70,7 @@ function Calculator() {
                                     <FormControl
                                         id="fatPer100GramsFood"
                                         type="number"
-                                        inputMode="numeric"
+                                        inputMode="decimal"
                                         value={value.fatPer100GramsFood}
                                         onChange={event => handleChangeFood(event, index)}
                                     />
@@ -93,7 +85,7 @@ function Calculator() {
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
-                                        inputMode="numeric"
+                                        inputMode="decimal"
                                         value={value.eatenGramsFood}
                                         onChange={event => handleChangeFood(event, index)}
                                     />

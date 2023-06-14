@@ -1,12 +1,12 @@
 import {OverlayTrigger, Tooltip} from 'react-bootstrap'
 import {InfoCircle} from 'react-bootstrap-icons'
-import {ReactNode} from "react";
+import React, {ReactNode} from "react";
 
 interface TooltipComponentProps {
     children: ReactNode
 }
 
-export function TooltipComponent(props: TooltipComponentProps): JSX.Element {
+export function TooltipComponent(props: TooltipComponentProps): React.JSX.Element {
     return (
         <OverlayTrigger
             placement="top"
