@@ -9,7 +9,7 @@ interface TooltipComponentProps {
 export function TooltipComponent(props: TooltipComponentProps): React.JSX.Element {
     return (
         <OverlayTrigger
-            placement="top"
+            placement="bottom"
             overlay={
                 <Tooltip id="button-tooltip">
                     {props.children}

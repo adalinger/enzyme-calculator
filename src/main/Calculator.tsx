@@ -2,8 +2,11 @@ import React from "react";
 import {Button, Col, Container, Form, FormControl, FormLabel, Row} from "react-bootstrap";
 import {TooltipComponent} from "./TooltipComponent";
 
-const tooltipFatContent = "Der Fettgehalt ist auf der Verpackung des Lebensmittels abgedruckt";
-const tooltipEatenFood = "Die verzehrte Menge soll am besten abgewogen und nur im Notfall geschätzt werden";
+const tooltip = <>
+    Hinweise zur Nutzung: <br/>
+    1) Der Fettgehalt von Lebensmitteln ist auf ihrer Verpackung abgedruckt. <br/>
+    2) Die verzehrte Menge Lebensmittel soll am besten abgewogen werden.
+</>;
 
 const keyEnzymeUnitsPerGramFat = "enzymeUnitsPerGramFat";
 
@@ -48,6 +51,12 @@ function Calculator() {
             <Container>
                 <Row>
                     <Col sm={12} className="mt-3">
+                        <h3>
+                            Pankreasenzym-Rechner
+                            <TooltipComponent>{tooltip}</TooltipComponent>
+                        </h3>
+                    </Col>
+                    <Col sm={12} className="mt-3">
                         <Form.Group>
                             <FormLabel htmlFor={keyEnzymeUnitsPerGramFat}>Enzymeinheiten pro 1g Fett</FormLabel>
                             <FormControl
@@ -63,10 +72,7 @@ function Calculator() {
                         <React.Fragment key={index}>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="fatPer100GramsFood">
-                                        Fett pro 100g Lebensmittel
-                                        <TooltipComponent>{tooltipFatContent}</TooltipComponent>
-                                    </FormLabel>
+                                    <FormLabel htmlFor="fatPer100GramsFood">Fett pro 100g Lebensmittel</FormLabel>
                                     <FormControl
                                         id="fatPer100GramsFood"
                                         type="number"
@@ -78,10 +84,7 @@ function Calculator() {
                             </Col>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="eatenGramsFood">
-                                        Verzehrte Menge in Gramm
-                                        <TooltipComponent>{tooltipEatenFood}</TooltipComponent>
-                                    </FormLabel>
+                                    <FormLabel htmlFor="eatenGramsFood">Verzehrte Menge in Gramm</FormLabel>
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
