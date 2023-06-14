@@ -1,6 +1,6 @@
 {
-  "short_name": "Enzyme Calculator",
-  "name": " This application calculates how much enzyme units should be ingested given the amount of fat eaten.",
+  "short_name": "EnzymeCalc",
+  "name": "Enzyme Calculator",
   "icons": [
     {
       "src": "favicon.ico",
