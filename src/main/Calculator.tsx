@@ -21,6 +21,10 @@ function Calculator() {
         setFoods([...foods, {fatPer100GramsFood: '', eatenGramsFood: ''}])
     }
 
+    const handleRemoveFood = () => {
+        setFoods(foods.slice(0, foods.length - 1))
+    }
+
     const handleChangeFood = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
         let newFoods = [...foods]
         newFoods[index][event.target.id] = event.target.value
@@ -97,7 +101,10 @@ function Calculator() {
                         </React.Fragment>
                     ))}
                     <Col md={12} className="mt-3">
-                        <Button variant="secondary" onClick={handleAddFood}>Zeile hinzufügen</Button>
+                        <Button variant="secondary" onClick={handleAddFood} className="me-2 mb-2">Lebensmittel
+                            hinzufügen</Button>
+                        <Button variant="danger" onClick={handleRemoveFood} className="me-2 mb-2">Lebensmittel
+                            entfernen</Button>
                     </Col>
                     <Col md={12} className="mt-3">
                         <Button type="submit">Berechnen</Button>
