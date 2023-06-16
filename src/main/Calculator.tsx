@@ -62,7 +62,7 @@ function Calculator() {
                     </Col>
                     <Col sm={12} className="mt-3">
                         <Form.Group>
-                            <FormLabel htmlFor={keyEnzymeUnitsPerGramFat}>Enzymeinheiten pro 1g Fett</FormLabel>
+                            <FormLabel htmlFor={keyEnzymeUnitsPerGramFat}>Enzymeinheiten für 1g Fett</FormLabel>
                             <FormControl
                                 id={keyEnzymeUnitsPerGramFat}
                                 type="number"
@@ -76,7 +76,7 @@ function Calculator() {
                         <React.Fragment key={index}>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="fatPer100GramsFood">Fett pro 100g Lebensmittel</FormLabel>
+                                    <FormLabel htmlFor="fatPer100GramsFood">Gramm Fett in 100g Lebensmittel</FormLabel>
                                     <FormControl
                                         id="fatPer100GramsFood"
                                         type="number"
@@ -88,7 +88,7 @@ function Calculator() {
                             </Col>
                             <Col xs={6} className="mt-3">
                                 <Form.Group>
-                                    <FormLabel htmlFor="eatenGramsFood">Verzehrte Menge in Gramm</FormLabel>
+                                    <FormLabel htmlFor="eatenGramsFood">Gramm verzehrte Lebensmittel</FormLabel>
                                     <FormControl
                                         id="eatenGramsFood"
                                         type="number"
