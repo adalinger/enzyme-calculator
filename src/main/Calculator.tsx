@@ -22,7 +22,9 @@ function Calculator() {
     }
 
     const handleRemoveFood = () => {
-        setFoods(foods.slice(0, foods.length - 1))
+        if (foods.length > 1) {
+            setFoods(foods.slice(0, foods.length - 1))
+        }
     }
 
     const handleChangeFood = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
