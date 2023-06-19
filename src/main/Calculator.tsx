@@ -3,9 +3,10 @@ import {Button, Col, Container, Form, FormControl, FormLabel, Row} from "react-b
 import {TooltipComponent} from "./TooltipComponent";
 
 const tooltip = <>
-    Hinweise zur Nutzung: <br/>
-    1) Der Fettgehalt von Lebensmitteln ist auf ihrer Verpackung abgedruckt. <br/>
-    2) Die verzehrte Menge Lebensmittel soll am besten abgewogen werden.
+    Hinweise zur Nutzung:<br/>
+    1) Der Fettgehalt von Lebensmitteln ist auf ihrer Verpackung abgedruckt.<br/>
+    2) Die verzehrte Menge Lebensmittel sollte abgewogen werden.<br/>
+    3) Die Verwendung dieser App geschieht auf eigne Verantwortung.
 </>;
 
 const keyEnzymeUnitsPerGramFat = "enzymeUnitsPerGramFat";
