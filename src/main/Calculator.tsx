@@ -59,7 +59,7 @@ function Calculator() {
                 <Row>
                     <Col sm={12} className="mt-3">
                         <h3>
-                            Pankreasenzym-Rechner
+                            Pankreatin-Rechner
                             <TooltipComponent>{tooltip}</TooltipComponent>
                         </h3>
                     </Col>
