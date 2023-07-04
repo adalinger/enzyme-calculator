@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Col, Container, Form, FormControl, FormLabel, Modal, Row} from "react-bootstrap";
-import {InfoCircle} from "react-bootstrap-icons";
+import {QuestionLg} from "react-bootstrap-icons";
 
 const usageNotes = <>
     <p>
@@ -65,7 +65,7 @@ function Calculator() {
             <Modal show={showInfo}>
                 <Modal.Header>
                     <Modal.Title>Hinweise zur Nutzung</Modal.Title>
-                    <Button variant="light" className="btn-close" onClick={() => setShowInfo(false)}/>
+                    <Button variant="light" className="btn-close rounded-circle" onClick={() => setShowInfo(false)}/>
                 </Modal.Header>
                 <Modal.Body>
                     <Container>
@@ -79,8 +79,8 @@ function Calculator() {
                         <Col sm={12} className="mt-3">
                             <h3>
                                 Pankreatin-Rechner
-                                <Button variant="light" className="mx-3" onClick={() => setShowInfo(true)}>
-                                    <InfoCircle/>
+                                <Button size="sm" className="mx-3 rounded-circle" onClick={() => setShowInfo(true)}>
+                                    <QuestionLg/>
                                 </Button>
                             </h3>
                         </Col>
