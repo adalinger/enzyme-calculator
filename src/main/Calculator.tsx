@@ -73,6 +73,7 @@ function Calculator() {
                     </Container>
                 </Modal.Body>
             </Modal>
+
             <Form onSubmit={handleSubmit}>
                 <Container>
                     <Row>
@@ -86,7 +87,7 @@ function Calculator() {
                         </Col>
                         <Col sm={12} className="mt-3">
                             <Form.Group>
-                                <FormLabel htmlFor={keyEnzymeUnitsPerGramFat}>Enzymeinheiten für 1g Fett</FormLabel>
+                                <FormLabel>Enzymeinheiten für 1g Fett</FormLabel>
                                 <FormControl
                                     id={keyEnzymeUnitsPerGramFat}
                                     type="number"
@@ -96,12 +97,16 @@ function Calculator() {
                                 />
                             </Form.Group>
                         </Col>
+                        <Col xs={6} className="mt-3">
+                            <FormLabel>Gramm Fett in 100g Lebensmittel</FormLabel>
+                        </Col>
+                        <Col xs={6} className="mt-3">
+                            <FormLabel htmlFor="eatenGramsFood">Gramm verzehrte Lebensmittel</FormLabel>
+                        </Col>
                         {foods.map((value, index) => (
                             <React.Fragment key={index}>
-                                <Col xs={6} className="mt-3">
+                                <Col xs={6} className="mb-3">
                                     <Form.Group>
-                                        <FormLabel htmlFor="fatPer100GramsFood">Gramm Fett in 100g
-                                            Lebensmittel</FormLabel>
                                         <FormControl
                                             id="fatPer100GramsFood"
                                             type="number"
@@ -111,9 +116,8 @@ function Calculator() {
                                         />
                                     </Form.Group>
                                 </Col>
-                                <Col xs={6} className="mt-3">
+                                <Col xs={6} className="mb-3">
                                     <Form.Group>
-                                        <FormLabel htmlFor="eatenGramsFood">Gramm verzehrte Lebensmittel</FormLabel>
                                         <FormControl
                                             id="eatenGramsFood"
                                             type="number"
