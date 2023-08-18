@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/enzyme-calculator/static/css/main.44f8b8b5.css",
-    "main.js": "/enzyme-calculator/static/js/main.c0db817e.js",
+    "main.css": "/enzyme-calculator/static/css/main.88404e20.css",
+    "main.js": "/enzyme-calculator/static/js/main.0cf99ab9.js",
     "static/js/787.9be462e3.chunk.js": "/enzyme-calculator/static/js/787.9be462e3.chunk.js",
     "index.html": "/enzyme-calculator/index.html",
-    "main.44f8b8b5.css.map": "/enzyme-calculator/static/css/main.44f8b8b5.css.map",
-    "main.c0db817e.js.map": "/enzyme-calculator/static/js/main.c0db817e.js.map",
+    "main.88404e20.css.map": "/enzyme-calculator/static/css/main.88404e20.css.map",
+    "main.0cf99ab9.js.map": "/enzyme-calculator/static/js/main.0cf99ab9.js.map",
     "787.9be462e3.chunk.js.map": "/enzyme-calculator/static/js/787.9be462e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44f8b8b5.css",
-    "static/js/main.c0db817e.js"
+    "static/css/main.88404e20.css",
+    "static/js/main.0cf99ab9.js"
   ]
 }
