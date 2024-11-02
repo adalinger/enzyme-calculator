@@ -13,7 +13,7 @@ const usageNotes = <>
         Die Verwendung dieser App geschieht auf eigene Verantwortung.
     </p>
     <p>
-        Der Quellcode der App ist verfügbar unter <a
+        Der App Quellcode ist verfügbar unter <a
         href="https://github.com/adalinger/enzyme-calculator">https://github.com/adalinger/enzyme-calculator</a>.
     </p>
 </>;
