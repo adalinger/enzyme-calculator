@@ -1,10 +1,8 @@
-# Enzyme Calculator
+# Pancreatic Enzyme Calculator
 
-Calculator for the dosage of pancreatic enzymes.
+This is a calculator for the dosage of pancreatic enzymes.
 The implementation uses React for the frontend and no backend.
-The app is available via https://adalinger.github.io/enzyme-calculator/.
-
-Inspirations were taken from https://github.com/Tugzrida/enzyme-calculator.
+The app is available via GitHub Pages to https://adalinger.github.io/enzyme-calculator/.
 
 ## Available Scripts
 
