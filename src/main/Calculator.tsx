@@ -4,16 +4,16 @@ import {QuestionLg} from "react-bootstrap-icons";
 
 const usageNotes = <>
     <p>
-        Diese App berechnet die benötigte Einheiten Pankreatin für eine Mahlzeit.
+        Diese App berechnet die nötigen Einheiten Pankreatin für eine Mahlzeit.
         Die Berechnung basiert auf den Enzymeinheiten pro 1g Fett und der verzehrten Menge Fett.
-        Der Fettgehalt von Lebensmitteln ist auf ihrer Verpackung abgedruckt.
-        Die verzehrte Menge Lebensmittel sollte abgewogen werden.
+        Der Fettgehalt von Lebensmitteln ist auf ihrer Verpackung abgedruckt
+        und die verzehrte Menge Lebensmittel sollte abgewogen werden.
     </p>
     <p>
         Die Verwendung dieser App geschieht auf eigene Verantwortung.
     </p>
     <p>
-        Der Quellcode dieser App ist verfügbar unter <a
+        Der Quellcode der App ist verfügbar unter <a
         href="https://github.com/adalinger/enzyme-calculator">https://github.com/adalinger/enzyme-calculator</a>.
     </p>
 </>;
